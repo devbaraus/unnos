@@ -3,14 +3,23 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "db:push": "prisma db push --force-reset",
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio"
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "eslint": "^9.21.0"
+    "eslint": "^9.21.0",
+    "prisma": "^6.4.1"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
+    "@prisma/client": "^6.4.1",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
     "valibot": "^1.0.0-rc.3"
