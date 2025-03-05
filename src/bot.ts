@@ -1,5 +1,6 @@
 import { env } from 'bun';
 import { Client, Events, GatewayIntentBits } from 'discord.js';
+import { db } from './db';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
