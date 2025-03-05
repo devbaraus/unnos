@@ -1,7 +1,13 @@
 const js = require("@eslint/js");
+import unusedImports from 'eslint-plugin-unused-imports'
+import importPlugin from 'eslint-plugin-import'
+import prettierConfig from 'eslint-config-prettier'
+import prettierPlugin from 'eslint-plugin-prettier/recommended'
 
 module.exports = [
   js.configs.recommended,
+  prettierConfig,
+  prettierPlugin,
   {
     languageOptions: {
       ecmaVersion: "latest",
@@ -48,6 +54,34 @@ module.exports = [
       "space-unary-ops": "error",
       "spaced-comment": "error",
       yoda: "error",
+    },
+  },
+  {
+    plugins: { import: importPlugin },
+    rules: {
+      'import/order': [
+        'warn',
+        {
+          groups: [
+            'type',
+            'builtin',
+            'object',
+            'external',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+          ],
+          pathGroups: [
+            {
+              pattern: '~/**',
+              group: 'external',
+              position: 'after',
+            },
+          ],
+          'newlines-between': 'always',
+        },
+      ],
     },
   },
 ];

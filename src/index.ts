@@ -1,5 +1,0 @@
-import 'dotenv/config'
-import './db'
-import './env'
-import './rest'
-import './bot'

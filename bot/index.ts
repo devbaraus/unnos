@@ -1,6 +1,8 @@
+import 'dotenv/config'
+
 import { env } from 'bun';
 import { Client, Events, GatewayIntentBits } from 'discord.js';
-import { db } from './db';
+import { db } from '@shared/db';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
