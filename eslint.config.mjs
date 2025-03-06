@@ -1,10 +1,9 @@
-const js = require("@eslint/js");
-import unusedImports from 'eslint-plugin-unused-imports'
+import js from "@eslint/js"
 import importPlugin from 'eslint-plugin-import'
 import prettierConfig from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier/recommended'
 
-module.exports = [
+export default [
   js.configs.recommended,
   prettierConfig,
   prettierPlugin,

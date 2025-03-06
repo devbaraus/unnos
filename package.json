@@ -1,13 +1,11 @@
 {
-  "name": "ksi-uno",
-  "module": "index.ts",
+  "name": "unnos",
+  "module": "src/index.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "concurrently -k -c cyan,yellow,purple \"bun dev:bot\" \"bun dev:app\" \"bun dev:tailwind\"",
-    "dev:bot": "bun --watch bot/index.ts",
-    "dev:app": "bun --watch app/index.tsx",
-    "dev:tailwind": "tailwindcss -i ./app/global.css -o ./app/public/global.css --watch",
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
     "db:push": "prisma db push --force-reset",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio"
@@ -25,17 +23,9 @@
     "typescript": "^5"
   },
   "dependencies": {
-    "@elysiajs/html": "^1.2.0",
-    "@elysiajs/static": "^1.2.0",
     "@prisma/client": "^6.4.1",
-    "@tailwindcss/cli": "^4.0.10",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
     "discord.js": "^14.18.0",
     "dotenv": "^16.4.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.10",
     "valibot": "^1.0.0-rc.3"
   }
 }

@@ -1,6 +1,6 @@
 import { REST, Routes, SlashCommandBuilder } from 'discord.js';
 
-import { env } from '@shared/env'
+import { env } from './env'
 
 // COMMANDS
 // /ganhou @username
